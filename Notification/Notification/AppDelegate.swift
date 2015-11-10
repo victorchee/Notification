@@ -41,6 +41,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print("Did receive local notification")
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        print("Handle local notification action with identifier : \(identifier)")
+        completionHandler()
+    }
 }
 
